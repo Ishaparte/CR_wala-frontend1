@@ -33,13 +33,33 @@
     height: auto;
   }
   
-  
-  .staticdata{
+
+  .stats-container {
     width: 100%;
-    /* max-width: 300px; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-radius: 90px;
+    gap: 60px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
   
+  .stat-item {
+    text-align: center;
+    min-width: 200px;
+  }
   
+  .stat-item h3 {
+    color: #333333;
+  }
+  
+  @media (max-width: 768px) {
+    .stats-container {
+      flex-direction: column;
+    }
+  }  
   
   .hero-content {
     max-width: 500px;

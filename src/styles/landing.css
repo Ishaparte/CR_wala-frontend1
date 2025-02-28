@@ -30,10 +30,33 @@
   height: auto;
 }
 
-.staticdata {
+.stats-container {
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  border-radius: 90px;
+  gap: 60px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.stat-item {
+  text-align: center;
+  min-width: 200px;
+}
+
+.stat-item h3 {
+  color: #333333;
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    flex-direction: column;
+  }
+}
+
 
 .hero-content {
   max-width: 500px;
@@ -93,6 +116,11 @@
   margin-bottom: 10px;
   border-radius: 5px;
   cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.service-item:hover {
+  transform: scale(1.03);
 }
 
 .service-header {
@@ -145,6 +173,25 @@
   background-color: #0056b3;
 }
 
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .hero-button button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .service-item {
+    padding: 12px;
+  }
+}
+
 @media (max-width: 768px) {
   .head {
     flex-direction: column;
@@ -152,7 +199,7 @@
   }
 
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .hero-button button {
@@ -166,7 +213,7 @@
 
 @media (max-width: 480px) {
   .hero h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .hero p {
@@ -174,6 +221,13 @@
   }
 
   .hero-button button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+
+  .consultation-form input,
+  .consultation-form textarea {
+    padding: 8px;
     font-size: 0.9rem;
   }
 }

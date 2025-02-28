@@ -73,6 +73,13 @@ const ServicesPage = () => {
     }
   };
 
+  const stats = [
+    { value: '47+', label: 'Client article published' },
+    { value: '24+', label: 'Start-up Company turned celebrities' },
+    { value: '9+', label: 'Award Received' },
+    { value: '32+', label: 'Skilled Team members' }
+  ];
+
 
   return (
     <div className="landing">
@@ -89,9 +96,14 @@ const ServicesPage = () => {
           <button onClick={() => setShowForm(true)}>Schedule a FREE call</button>
         </div>
 
-        <div className="staticdata">
-        <img src="/img/sdata.png" alt="Static data" className="sdata" />
+        <div className="stats-container">
+      {stats.map((stat, index) => (
+        <div key={index} className="stat-item">
+          <h3>{stat.value}</h3>
+          <h3>{stat.label}</h3>
         </div>
+      ))}
+    </div>
       </header>
 
       {showForm && (
