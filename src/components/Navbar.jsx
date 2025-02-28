@@ -1,8 +1,9 @@
 import { useState } from "react";
 import "../styles/navbar.css";
-import logoImg from "../../public/img/logo.png";
+import logoImg from "/img/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -28,12 +29,25 @@ const Navbar = () => {
           <input type="text" placeholder="Hinted search text" />
           <FontAwesomeIcon icon={faSearch} className="search-icon" />
         </div>
-        <li><a href="/">Home</a></li>
-        <li><a href="/services">Services</a></li>
-        <li><a href="/case-studies">Case Studies</a></li>
-        <li><a href="#">Testimonial</a></li>
-        <li><a href="/contact-us">Contact</a></li>
-        <li><button className="register-btn">Register</button></li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/services">Services</Link>
+        </li>
+        <li>
+          <Link to="/case-studies">Case Studies</Link>
+        </li>
+        <li>
+          <Link to="/#">Testimonial</Link>
+        </li>{" "}
+        {/* For Testimonials, use a hash link or section ID */}
+        <li>
+          <Link to="/contact-us">Contact</Link>
+        </li>
+        <li>
+          <button className="register-btn">Register</button>
+        </li>
       </ul>
     </nav>
   );
