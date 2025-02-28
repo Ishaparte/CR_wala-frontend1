@@ -1,16 +1,16 @@
 import React from "react";
+import "./styles/global.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import LandingPage from "./components/LandingPage";
 import CaseStudies from "./components/CaseStudies";
-import Maincs from "./components/CaseStudiesPage";
 import Footer from "./components/Footer";
+import Login from "./components/Login";
+import Register from "./components/Register";
 import Testimonials from "./components/Testimonial";
 import Packages from "./components/Package";
-import ServicesComponent from "./components/Services";
-import Contact from "./components/Contact";
 
-import "./styles/global.css";
+
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={
           <>
+          
             <LandingPage />
             <CaseStudies />
             <Testimonials />
@@ -27,33 +28,25 @@ function App() {
           </>
         } />
 
-<Route path="/services" element={
-  <>
-    <ServicesComponent />
-    <Testimonials/>
-    <Packages/>
-   <Footer/>
-  </>
-} />
-
-
-<Route path="/case-studies" element={
-          <>  
-          <Maincs />
-          <Testimonials/>
-          <Packages/>
-          <Footer/>
-          </>
-        
-      } />
-
-<Route path="/contact-us" element={
+       <Route path="login" element={
           <>
-          <Contact />
-          <Footer/>
-          </>
           
-          } />
+            <Login/>
+            <Footer />
+          </>
+        } />
+
+       <Route path="register" element={
+          <>
+         
+            <Register/>
+            <Footer />
+          </>
+        } />
+
+       
+
+
 
         {/* <Route path="/services" element={
           <>
@@ -63,7 +56,6 @@ function App() {
            <Footer/>
           </>
         } />
-
         <Route path="/case-studies" element={
           <>  
           <CaseStudies />
